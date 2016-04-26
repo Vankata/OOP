@@ -1,9 +1,8 @@
 #include "stdafx.h"
 #include "Car.h"
 
-Car::Car()
+Car::Car() :Vehicle()
 {
-	Vehicle();
 	this->model = NULL;
 	this->doors = 0;
 	this->HP = 0;
