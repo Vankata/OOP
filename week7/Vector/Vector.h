@@ -9,12 +9,12 @@ using namespace std;
 class Vector
 {
 private:
-	int *elements;
+	double *elements;
 	int numberElements;
 
 public:
-	Vector();//done
-	Vector(int *elements, int numberElements);//done
+Vector();//done
+	Vector(double *elements, int numberElements);//done
 	Vector(const Vector &other);//done
 	Vector &operator=(const Vector &other);//done
 	~Vector();//done
@@ -27,17 +27,17 @@ public:
 	Vector &operator+=(const Vector &other);//done
 	Vector &operator-=(const Vector &other);//done
 
-	friend Vector operator+(const Vector other, int num);//done
-	Vector &operator+=(int num);//done
-	friend Vector operator-(const Vector other, int num);//done
-	Vector &operator-=(int num);//done
-	friend Vector operator*(const Vector other, int num);//done
-	Vector &operator*=(int num);//done
-	friend Vector operator/(const Vector other, int num);//done
-	Vector &operator/=(int num);//done
+	friend Vector operator+(const Vector other, double num);//done
+	Vector &operator+=(double num);//done
+	friend Vector operator-(const Vector other, double num);//done
+	Vector &operator-=(double num);//done
+	friend Vector operator*(const Vector other, double num);//done
+	Vector &operator*=(double num);//done
+	friend Vector operator/(const Vector other, double num);//done
+	Vector &operator/=(double num);//done
 
-	const int operator[](int index)const;//done
-	int &operator[](int index);//done
+	const double operator[](int index)const;//done
+	double &operator[](int index);//done
 
 	friend Vector operator*(const Vector &v1, const Vector &v2);//done
 	Vector &operator*=(const Vector &other);//done
