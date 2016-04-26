@@ -1,9 +1,8 @@
 #include "stdafx.h"
 #include "Bicycle.h"
 
-Bicycle::Bicycle()
+Bicycle::Bicycle() :Vehicle()
 {
-	Vehicle();
 	this->gears = 0;
 	this->lights = false;
 	this->ring = false;
