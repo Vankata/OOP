@@ -7,9 +7,9 @@ Vector::Vector()
 	this->numberElements = 0;
 }
 
-Vector::Vector(int *elements, int numberElements)
+Vector::Vector(double *elements, int numberElements)
 {
-	this->elements = new int[numberElements];
+	this->elements = new double[numberElements];
 
 	for (int i = 0; i < numberElements; i++)
 	{
@@ -20,7 +20,7 @@ Vector::Vector(int *elements, int numberElements)
 
 Vector::Vector(const Vector &other)
 {
-	this->elements = new int[other.numberElements];
+	this->elements = new double[other.numberElements];
 
 	for (int i = 0; i < other.numberElements; i++)
 	{
@@ -38,7 +38,7 @@ Vector &Vector::operator=(const Vector &other)
 			delete[]this->elements;
 		}
 
-		this->elements = new int[other.numberElements];
+		this->elements = new double[other.numberElements];
 
 		for (int i = 0; i < other.numberElements; i++)
 		{
@@ -145,7 +145,7 @@ Vector operator-(const Vector &v1, const Vector &v2)
 	return result;
 }
 
-Vector &Vector::operator+=(int num)
+Vector &Vector::operator+=(double num)
 {
 	for (int i = 0; i < this->numberElements; i++)
 	{
@@ -155,7 +155,7 @@ Vector &Vector::operator+=(int num)
 	return *this;
 }
 
-Vector &Vector::operator-=(int num)
+Vector &Vector::operator-=(double num)
 {
 	for (int i = 0; i < this->numberElements; i++)
 	{
@@ -165,7 +165,7 @@ Vector &Vector::operator-=(int num)
 	return *this;
 }
 
-Vector operator+(const Vector other, int num)
+Vector operator+(const Vector other, double num)
 {
 	Vector result(other);
 
@@ -174,7 +174,7 @@ Vector operator+(const Vector other, int num)
 	return result;
 }
 
-Vector operator-(const Vector other, int num)
+Vector operator-(const Vector other, double num)
 {
 	Vector result(other);
 
@@ -183,7 +183,7 @@ Vector operator-(const Vector other, int num)
 	return result;
 }
 
-Vector &Vector::operator*=(int num)
+Vector &Vector::operator*=(double num)
 {
 	for (int i = 0; i < this->numberElements; i++)
 	{
@@ -193,7 +193,7 @@ Vector &Vector::operator*=(int num)
 	return *this;
 }
 
-Vector &Vector::operator/=(int num)
+Vector &Vector::operator/=(double num)
 {
 	for (int i = 0; i < this->numberElements; i++)
 	{
@@ -203,7 +203,7 @@ Vector &Vector::operator/=(int num)
 	return *this;
 }
 
-Vector operator*(const Vector other, int num)
+Vector operator*(const Vector other, double num)
 {
 	Vector result(other);
 
@@ -212,7 +212,7 @@ Vector operator*(const Vector other, int num)
 	return result;
 }
 
-Vector operator/(const Vector other, int num)
+Vector operator/(const Vector other, double num)
 {
 	Vector result(other);
 
@@ -221,9 +221,9 @@ Vector operator/(const Vector other, int num)
 	return result;
 }
 
-int wrongIndex = 404;
+double wrongIndex = 404;
 
-const int Vector::operator[](int index)const
+const double Vector::operator[](int index)const
 {
 	if (index < 0 || index > this->numberElements)
 	{
@@ -235,7 +235,7 @@ const int Vector::operator[](int index)const
 	}
 }
 
-int &Vector::operator[](int index)
+double &Vector::operator[](int index)
 {
 	if (index < 0 || index > this->numberElements)
 	{
@@ -286,12 +286,12 @@ Vector operator*(const Vector &v1, const Vector &v2)
 
 Vector &Vector::operator!()
 {
-	int sum = 0;
+	double sum = 0;
 	for (int i = 0; i < this->numberElements; i++)
 	{
 		sum += this->elements[i] * this->elements[i];
 	}
-	int length = sqrt(sum);
+	double length = sqrt(sum);
 	
-	return (*this *= (1.0 / length));
+	return (*this /= length);
 }
