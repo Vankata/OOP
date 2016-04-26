@@ -4,8 +4,8 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int elements[3];
-	int elementss[4];
+	double elements[3];
+	double elementss[4];
 	Vector v1(elements, 3);
 	Vector v2(elementss, 4);
 
